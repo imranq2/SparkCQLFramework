@@ -1,0 +1,2522 @@
+{
+   "library" : {
+      "identifier" : {
+         "id" : "BreastCancerScreening",
+         "version" : "8.4.000"
+      },
+      "schemaIdentifier" : {
+         "id" : "urn:hl7-org:elm",
+         "version" : "r1"
+      },
+      "usings" : {
+         "def" : [ {
+            "localIdentifier" : "System",
+            "uri" : "urn:hl7-org:elm-types:r1"
+         }, {
+            "localId" : "1",
+            "locator" : "3:1-3:23",
+            "localIdentifier" : "QDM",
+            "uri" : "urn:healthit-gov:qdm:v5_4",
+            "version" : "5.4"
+         } ]
+      },
+      "includes" : {
+         "def" : [ {
+            "localId" : "2",
+            "locator" : "5:1-5:64",
+            "localIdentifier" : "Global",
+            "path" : "MATGlobalCommonFunctions",
+            "version" : "4.0.000"
+         }, {
+            "localId" : "3",
+            "locator" : "6:1-6:86",
+            "localIdentifier" : "AdultOutpatientEncounters",
+            "path" : "Adult_Outpatient_Encounters",
+            "version" : "1.2.000"
+         }, {
+            "localId" : "4",
+            "locator" : "7:1-7:48",
+            "localIdentifier" : "Hospice",
+            "path" : "Hospice",
+            "version" : "2.0.000"
+         }, {
+            "localId" : "5",
+            "locator" : "8:1-8:82",
+            "localIdentifier" : "FrailtyLTI",
+            "path" : "AdvancedIllnessandFrailtyExclusionECQM",
+            "version" : "4.0.000"
+         } ]
+      },
+      "parameters" : {
+         "def" : [ {
+            "localId" : "27",
+            "locator" : "31:1-31:49",
+            "name" : "Measurement Period",
+            "accessLevel" : "Public",
+            "parameterTypeSpecifier" : {
+               "localId" : "26",
+               "locator" : "31:32-31:49",
+               "type" : "IntervalTypeSpecifier",
+               "pointType" : {
+                  "localId" : "25",
+                  "locator" : "31:41-31:48",
+                  "name" : "{urn:hl7-org:elm-types:r1}DateTime",
+                  "type" : "NamedTypeSpecifier"
+               }
+            }
+         } ]
+      },
+      "codeSystems" : {
+         "def" : [ {
+            "localId" : "6",
+            "locator" : "10:1-10:51",
+            "name" : "LOINC",
+            "id" : "urn:oid:2.16.840.1.113883.6.1",
+            "accessLevel" : "Public"
+         } ]
+      },
+      "valueSets" : {
+         "def" : [ {
+            "localId" : "7",
+            "locator" : "12:1-12:83",
+            "name" : "Bilateral Mastectomy",
+            "id" : "urn:oid:2.16.840.1.113883.3.464.1003.198.12.1005",
+            "accessLevel" : "Public"
+         }, {
+            "localId" : "8",
+            "locator" : "13:1-13:58",
+            "name" : "Ethnicity",
+            "id" : "urn:oid:2.16.840.1.114222.4.11.837",
+            "accessLevel" : "Public"
+         }, {
+            "localId" : "9",
+            "locator" : "14:1-14:58",
+            "name" : "Female",
+            "id" : "urn:oid:2.16.840.1.113883.3.560.100.2",
+            "accessLevel" : "Public"
+         }, {
+            "localId" : "10",
+            "locator" : "15:1-15:94",
+            "name" : "History of bilateral mastectomy",
+            "id" : "urn:oid:2.16.840.1.113883.3.464.1003.198.12.1068",
+            "accessLevel" : "Public"
+         }, {
+            "localId" : "11",
+            "locator" : "16:1-16:67",
+            "name" : "Left",
+            "id" : "urn:oid:2.16.840.1.113883.3.464.1003.122.12.1036",
+            "accessLevel" : "Public"
+         }, {
+            "localId" : "12",
+            "locator" : "17:1-17:74",
+            "name" : "Mammography",
+            "id" : "urn:oid:2.16.840.1.113883.3.464.1003.108.12.1018",
+            "accessLevel" : "Public"
+         }, {
+            "localId" : "13",
+            "locator" : "18:1-18:68",
+            "name" : "ONC Administrative Sex",
+            "id" : "urn:oid:2.16.840.1.113762.1.4.1",
+            "accessLevel" : "Public"
+         }, {
+            "localId" : "14",
+            "locator" : "19:1-19:55",
+            "name" : "Payer",
+            "id" : "urn:oid:2.16.840.1.114222.4.11.3591",
+            "accessLevel" : "Public"
+         }, {
+            "localId" : "15",
+            "locator" : "20:1-20:53",
+            "name" : "Race",
+            "id" : "urn:oid:2.16.840.1.114222.4.11.836",
+            "accessLevel" : "Public"
+         }, {
+            "localId" : "16",
+            "locator" : "21:1-21:68",
+            "name" : "Right",
+            "id" : "urn:oid:2.16.840.1.113883.3.464.1003.122.12.1035",
+            "accessLevel" : "Public"
+         }, {
+            "localId" : "17",
+            "locator" : "22:1-22:90",
+            "name" : "Status Post Left Mastectomy",
+            "id" : "urn:oid:2.16.840.1.113883.3.464.1003.198.12.1069",
+            "accessLevel" : "Public"
+         }, {
+            "localId" : "18",
+            "locator" : "23:1-23:91",
+            "name" : "Status Post Right Mastectomy",
+            "id" : "urn:oid:2.16.840.1.113883.3.464.1003.198.12.1070",
+            "accessLevel" : "Public"
+         }, {
+            "localId" : "19",
+            "locator" : "24:1-24:84",
+            "name" : "Unilateral Mastectomy",
+            "id" : "urn:oid:2.16.840.1.113883.3.464.1003.198.12.1020",
+            "accessLevel" : "Public"
+         }, {
+            "localId" : "20",
+            "locator" : "25:1-25:89",
+            "name" : "Unilateral Mastectomy Left",
+            "id" : "urn:oid:2.16.840.1.113883.3.464.1003.198.12.1133",
+            "accessLevel" : "Public"
+         }, {
+            "localId" : "21",
+            "locator" : "26:1-26:90",
+            "name" : "Unilateral Mastectomy Right",
+            "id" : "urn:oid:2.16.840.1.113883.3.464.1003.198.12.1134",
+            "accessLevel" : "Public"
+         }, {
+            "localId" : "22",
+            "locator" : "27:1-27:108",
+            "name" : "Unilateral Mastectomy, Unspecified Laterality",
+            "id" : "urn:oid:2.16.840.1.113883.3.464.1003.198.12.1071",
+            "accessLevel" : "Public"
+         } ]
+      },
+      "codes" : {
+         "def" : [ {
+            "localId" : "24",
+            "locator" : "29:1-29:62",
+            "name" : "Birth date",
+            "id" : "21112-8",
+            "display" : "Birth date",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "23",
+               "locator" : "29:35-29:41",
+               "name" : "LOINC"
+            }
+         } ]
+      },
+      "statements" : {
+         "def" : [ {
+            "locator" : "33:1-33:15",
+            "name" : "Patient",
+            "context" : "Patient",
+            "expression" : {
+               "type" : "SingletonFrom",
+               "operand" : {
+                  "locator" : "33:1-33:15",
+                  "dataType" : "{urn:healthit-gov:qdm:v5_4}Patient",
+                  "templateId" : "Patient",
+                  "type" : "Retrieve"
+               }
+            }
+         }, {
+            "localId" : "29",
+            "locator" : "35:1-36:50",
+            "name" : "SDE Ethnicity",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "29",
+                  "s" : [ {
+                     "value" : [ "define ","\"SDE Ethnicity\"",":\n\t" ]
+                  }, {
+                     "r" : "28",
+                     "s" : [ {
+                        "value" : [ "[","\"Patient Characteristic Ethnicity\"",": " ]
+                     }, {
+                        "s" : [ {
+                           "value" : [ "\"Ethnicity\"" ]
+                        } ]
+                     }, {
+                        "value" : [ "]" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "28",
+               "locator" : "36:2-36:50",
+               "dataType" : "{urn:healthit-gov:qdm:v5_4}PatientCharacteristicEthnicity",
+               "codeProperty" : "code",
+               "type" : "Retrieve",
+               "codes" : {
+                  "name" : "Ethnicity",
+                  "type" : "ValueSetRef"
+               }
+            }
+         }, {
+            "localId" : "31",
+            "locator" : "38:1-39:42",
+            "name" : "SDE Payer",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "31",
+                  "s" : [ {
+                     "value" : [ "define ","\"SDE Payer\"",":\n\t" ]
+                  }, {
+                     "r" : "30",
+                     "s" : [ {
+                        "value" : [ "[","\"Patient Characteristic Payer\"",": " ]
+                     }, {
+                        "s" : [ {
+                           "value" : [ "\"Payer\"" ]
+                        } ]
+                     }, {
+                        "value" : [ "]" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "30",
+               "locator" : "39:2-39:42",
+               "dataType" : "{urn:healthit-gov:qdm:v5_4}PatientCharacteristicPayer",
+               "codeProperty" : "code",
+               "type" : "Retrieve",
+               "codes" : {
+                  "name" : "Payer",
+                  "type" : "ValueSetRef"
+               }
+            }
+         }, {
+            "localId" : "33",
+            "locator" : "41:1-42:40",
+            "name" : "SDE Race",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "33",
+                  "s" : [ {
+                     "value" : [ "define ","\"SDE Race\"",":\n\t" ]
+                  }, {
+                     "r" : "32",
+                     "s" : [ {
+                        "value" : [ "[","\"Patient Characteristic Race\"",": " ]
+                     }, {
+                        "s" : [ {
+                           "value" : [ "\"Race\"" ]
+                        } ]
+                     }, {
+                        "value" : [ "]" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "32",
+               "locator" : "42:2-42:40",
+               "dataType" : "{urn:healthit-gov:qdm:v5_4}PatientCharacteristicRace",
+               "codeProperty" : "code",
+               "type" : "Retrieve",
+               "codes" : {
+                  "name" : "Race",
+                  "type" : "ValueSetRef"
+               }
+            }
+         }, {
+            "localId" : "35",
+            "locator" : "44:1-45:57",
+            "name" : "SDE Sex",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "35",
+                  "s" : [ {
+                     "value" : [ "define ","\"SDE Sex\"",":\n\t" ]
+                  }, {
+                     "r" : "34",
+                     "s" : [ {
+                        "value" : [ "[","\"Patient Characteristic Sex\"",": " ]
+                     }, {
+                        "s" : [ {
+                           "value" : [ "\"ONC Administrative Sex\"" ]
+                        } ]
+                     }, {
+                        "value" : [ "]" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "34",
+               "locator" : "45:2-45:57",
+               "dataType" : "{urn:healthit-gov:qdm:v5_4}PatientCharacteristicSex",
+               "codeProperty" : "code",
+               "type" : "Retrieve",
+               "codes" : {
+                  "name" : "ONC Administrative Sex",
+                  "type" : "ValueSetRef"
+               }
+            }
+         }, {
+            "localId" : "57",
+            "locator" : "93:1-97:64",
+            "name" : "Initial Population",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "57",
+                  "s" : [ {
+                     "value" : [ "define ","\"Initial Population\"",":\n\t" ]
+                  }, {
+                     "r" : "56",
+                     "s" : [ {
+                        "r" : "37",
+                        "s" : [ {
+                           "value" : [ "exists " ]
+                        }, {
+                           "r" : "36",
+                           "s" : [ {
+                              "value" : [ "( " ]
+                           }, {
+                              "r" : "36",
+                              "s" : [ {
+                                 "value" : [ "[","\"Patient Characteristic Sex\"",": " ]
+                              }, {
+                                 "s" : [ {
+                                    "value" : [ "\"Female\"" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "]" ]
+                              } ]
+                           }, {
+                              "value" : [ " )" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ "\n\t\tand " ]
+                     }, {
+                        "r" : "55",
+                        "s" : [ {
+                           "value" : [ "exists " ]
+                        }, {
+                           "r" : "54",
+                           "s" : [ {
+                              "s" : [ {
+                                 "r" : "39",
+                                 "s" : [ {
+                                    "r" : "38",
+                                    "s" : [ {
+                                       "r" : "38",
+                                       "s" : [ {
+                                          "value" : [ "[","\"Patient Characteristic Birthdate\"",": " ]
+                                       }, {
+                                          "s" : [ {
+                                             "value" : [ "\"Birth date\"" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "]" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " ","BirthDate" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n\t\t\t" ]
+                           }, {
+                              "r" : "53",
+                              "s" : [ {
+                                 "value" : [ "where " ]
+                              }, {
+                                 "r" : "53",
+                                 "s" : [ {
+                                    "r" : "49",
+                                    "s" : [ {
+                                       "r" : "45",
+                                       "s" : [ {
+                                          "r" : "40",
+                                          "s" : [ {
+                                             "value" : [ "Global" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "45",
+                                          "s" : [ {
+                                             "value" : [ "\"CalendarAgeInYearsAt\"","(" ]
+                                          }, {
+                                             "r" : "42",
+                                             "s" : [ {
+                                                "r" : "41",
+                                                "s" : [ {
+                                                   "value" : [ "BirthDate" ]
+                                                } ]
+                                             }, {
+                                                "value" : [ "." ]
+                                             }, {
+                                                "r" : "42",
+                                                "s" : [ {
+                                                   "value" : [ "birthDatetime" ]
+                                                } ]
+                                             } ]
+                                          }, {
+                                             "value" : [ ", " ]
+                                          }, {
+                                             "r" : "44",
+                                             "s" : [ {
+                                                "value" : [ "start of " ]
+                                             }, {
+                                                "r" : "43",
+                                                "s" : [ {
+                                                   "value" : [ "\"Measurement Period\"" ]
+                                                } ]
+                                             } ]
+                                          }, {
+                                             "value" : [ ")" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "in " ]
+                                    }, {
+                                       "r" : "48",
+                                       "s" : [ {
+                                          "value" : [ "Interval[","51",", ","74"," )" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "\n\t\t\t\tand " ]
+                                 }, {
+                                    "r" : "52",
+                                    "s" : [ {
+                                       "value" : [ "exists " ]
+                                    }, {
+                                       "r" : "51",
+                                       "s" : [ {
+                                          "r" : "50",
+                                          "s" : [ {
+                                             "value" : [ "AdultOutpatientEncounters" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "51",
+                                          "s" : [ {
+                                             "value" : [ "\"Qualifying Encounters\"" ]
+                                          } ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              } ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "56",
+               "locator" : "94:2-97:64",
+               "type" : "And",
+               "operand" : [ {
+                  "localId" : "37",
+                  "locator" : "94:2-94:52",
+                  "type" : "Exists",
+                  "operand" : {
+                     "localId" : "36",
+                     "locator" : "94:9-94:52",
+                     "dataType" : "{urn:healthit-gov:qdm:v5_4}PatientCharacteristicSex",
+                     "codeProperty" : "code",
+                     "type" : "Retrieve",
+                     "codes" : {
+                        "name" : "Female",
+                        "type" : "ValueSetRef"
+                     }
+                  }
+               }, {
+                  "localId" : "55",
+                  "locator" : "95:7-97:64",
+                  "type" : "Exists",
+                  "operand" : {
+                     "localId" : "54",
+                     "locator" : "95:14-97:64",
+                     "type" : "Query",
+                     "source" : [ {
+                        "localId" : "39",
+                        "locator" : "95:14-95:73",
+                        "alias" : "BirthDate",
+                        "expression" : {
+                           "localId" : "38",
+                           "locator" : "95:14-95:63",
+                           "dataType" : "{urn:healthit-gov:qdm:v5_4}PatientCharacteristicBirthdate",
+                           "codeProperty" : "code",
+                           "type" : "Retrieve",
+                           "codes" : {
+                              "type" : "ToList",
+                              "operand" : {
+                                 "name" : "Birth date",
+                                 "type" : "CodeRef"
+                              }
+                           }
+                        }
+                     } ],
+                     "relationship" : [ ],
+                     "where" : {
+                        "localId" : "53",
+                        "locator" : "96:4-97:64",
+                        "type" : "And",
+                        "operand" : [ {
+                           "localId" : "49",
+                           "locator" : "96:10-96:114",
+                           "type" : "In",
+                           "operand" : [ {
+                              "localId" : "45",
+                              "locator" : "96:10-96:94",
+                              "name" : "CalendarAgeInYearsAt",
+                              "libraryName" : "Global",
+                              "type" : "FunctionRef",
+                              "operand" : [ {
+                                 "localId" : "42",
+                                 "locator" : "96:40-96:62",
+                                 "path" : "birthDatetime",
+                                 "scope" : "BirthDate",
+                                 "type" : "Property"
+                              }, {
+                                 "localId" : "44",
+                                 "locator" : "96:65-96:93",
+                                 "type" : "Start",
+                                 "operand" : {
+                                    "localId" : "43",
+                                    "locator" : "96:74-96:93",
+                                    "name" : "Measurement Period",
+                                    "type" : "ParameterRef"
+                                 }
+                              } ]
+                           }, {
+                              "localId" : "48",
+                              "locator" : "96:98-96:114",
+                              "lowClosed" : true,
+                              "highClosed" : false,
+                              "type" : "Interval",
+                              "low" : {
+                                 "localId" : "46",
+                                 "locator" : "96:107-96:108",
+                                 "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                                 "value" : "51",
+                                 "type" : "Literal"
+                              },
+                              "high" : {
+                                 "localId" : "47",
+                                 "locator" : "96:111-96:112",
+                                 "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                                 "value" : "74",
+                                 "type" : "Literal"
+                              }
+                           } ]
+                        }, {
+                           "localId" : "52",
+                           "locator" : "97:9-97:64",
+                           "type" : "Exists",
+                           "operand" : {
+                              "localId" : "51",
+                              "locator" : "97:16-97:64",
+                              "name" : "Qualifying Encounters",
+                              "libraryName" : "AdultOutpatientEncounters",
+                              "type" : "ExpressionRef"
+                           }
+                        } ]
+                     }
+                  }
+               } ]
+            }
+         }, {
+            "localId" : "59",
+            "locator" : "47:1-48:21",
+            "name" : "Denominator",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "59",
+                  "s" : [ {
+                     "value" : [ "define ","\"Denominator\"",":\n\t" ]
+                  }, {
+                     "r" : "58",
+                     "s" : [ {
+                        "value" : [ "\"Initial Population\"" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "58",
+               "locator" : "48:2-48:21",
+               "name" : "Initial Population",
+               "type" : "ExpressionRef"
+            }
+         }, {
+            "localId" : "68",
+            "locator" : "50:1-52:91",
+            "name" : "Bilateral Mastectomy Procedure",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "68",
+                  "s" : [ {
+                     "value" : [ "define ","\"Bilateral Mastectomy Procedure\"",":\n\t" ]
+                  }, {
+                     "r" : "67",
+                     "s" : [ {
+                        "s" : [ {
+                           "r" : "61",
+                           "s" : [ {
+                              "r" : "60",
+                              "s" : [ {
+                                 "r" : "60",
+                                 "s" : [ {
+                                    "value" : [ "[","\"Procedure, Performed\"",": " ]
+                                 }, {
+                                    "s" : [ {
+                                       "value" : [ "\"Bilateral Mastectomy\"" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "]" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ " ","BilateralMastectomyPerformed" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ "\n\t\t" ]
+                     }, {
+                        "r" : "66",
+                        "s" : [ {
+                           "value" : [ "where " ]
+                        }, {
+                           "r" : "66",
+                           "s" : [ {
+                              "r" : "63",
+                              "s" : [ {
+                                 "r" : "62",
+                                 "s" : [ {
+                                    "value" : [ "BilateralMastectomyPerformed" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "63",
+                                 "s" : [ {
+                                    "value" : [ "relevantPeriod" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ " ","ends before"," " ]
+                           }, {
+                              "r" : "65",
+                              "s" : [ {
+                                 "value" : [ "end of " ]
+                              }, {
+                                 "r" : "64",
+                                 "s" : [ {
+                                    "value" : [ "\"Measurement Period\"" ]
+                                 } ]
+                              } ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "67",
+               "locator" : "51:2-52:91",
+               "type" : "Query",
+               "source" : [ {
+                  "localId" : "61",
+                  "locator" : "51:2-51:78",
+                  "alias" : "BilateralMastectomyPerformed",
+                  "expression" : {
+                     "localId" : "60",
+                     "locator" : "51:2-51:49",
+                     "dataType" : "{urn:healthit-gov:qdm:v5_4}PositiveProcedurePerformed",
+                     "templateId" : "PositiveProcedurePerformed",
+                     "codeProperty" : "code",
+                     "type" : "Retrieve",
+                     "codes" : {
+                        "name" : "Bilateral Mastectomy",
+                        "type" : "ValueSetRef"
+                     }
+                  }
+               } ],
+               "relationship" : [ ],
+               "where" : {
+                  "localId" : "66",
+                  "locator" : "52:3-52:91",
+                  "type" : "Before",
+                  "operand" : [ {
+                     "locator" : "52:53-52:56",
+                     "type" : "End",
+                     "operand" : {
+                        "localId" : "63",
+                        "locator" : "52:9-52:51",
+                        "path" : "relevantPeriod",
+                        "scope" : "BilateralMastectomyPerformed",
+                        "type" : "Property"
+                     }
+                  }, {
+                     "localId" : "65",
+                     "locator" : "52:65-52:91",
+                     "type" : "End",
+                     "operand" : {
+                        "localId" : "64",
+                        "locator" : "52:72-52:91",
+                        "name" : "Measurement Period",
+                        "type" : "ParameterRef"
+                     }
+                  } ]
+               }
+            }
+         }, {
+            "localId" : "78",
+            "locator" : "54:1-57:2",
+            "name" : "Numerator",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "78",
+                  "s" : [ {
+                     "value" : [ "define ","\"Numerator\"",":\n\t" ]
+                  }, {
+                     "r" : "77",
+                     "s" : [ {
+                        "value" : [ "exists " ]
+                     }, {
+                        "r" : "76",
+                        "s" : [ {
+                           "value" : [ "( " ]
+                        }, {
+                           "r" : "76",
+                           "s" : [ {
+                              "s" : [ {
+                                 "r" : "70",
+                                 "s" : [ {
+                                    "r" : "69",
+                                    "s" : [ {
+                                       "r" : "69",
+                                       "s" : [ {
+                                          "value" : [ "[","\"Diagnostic Study, Performed\"",": " ]
+                                       }, {
+                                          "s" : [ {
+                                             "value" : [ "\"Mammography\"" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "]" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " ","Mammogram" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n\t\t\t" ]
+                           }, {
+                              "r" : "75",
+                              "s" : [ {
+                                 "value" : [ "where " ]
+                              }, {
+                                 "r" : "75",
+                                 "s" : [ {
+                                    "value" : [ "( " ]
+                                 }, {
+                                    "r" : "75",
+                                    "s" : [ {
+                                       "r" : "72",
+                                       "s" : [ {
+                                          "r" : "71",
+                                          "s" : [ {
+                                             "value" : [ "Mammogram" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "72",
+                                          "s" : [ {
+                                             "value" : [ "relevantPeriod" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " " ]
+                                    }, {
+                                       "r" : "75",
+                                       "s" : [ {
+                                          "value" : [ "ends " ]
+                                       }, {
+                                          "r" : "74",
+                                          "s" : [ {
+                                             "value" : [ "27 ","months" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ " or less before day of end" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " " ]
+                                    }, {
+                                       "r" : "73",
+                                       "s" : [ {
+                                          "value" : [ "\"Measurement Period\"" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " )" ]
+                                 } ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n\t)" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "77",
+               "locator" : "55:2-57:2",
+               "type" : "Exists",
+               "operand" : {
+                  "localId" : "76",
+                  "locator" : "55:9-57:2",
+                  "type" : "Query",
+                  "source" : [ {
+                     "localId" : "70",
+                     "locator" : "55:11-55:66",
+                     "alias" : "Mammogram",
+                     "expression" : {
+                        "localId" : "69",
+                        "locator" : "55:11-55:56",
+                        "dataType" : "{urn:healthit-gov:qdm:v5_4}PositiveDiagnosticStudyPerformed",
+                        "templateId" : "PositiveDiagnosticStudyPerformed",
+                        "codeProperty" : "code",
+                        "type" : "Retrieve",
+                        "codes" : {
+                           "name" : "Mammography",
+                           "type" : "ValueSetRef"
+                        }
+                     }
+                  } ],
+                  "relationship" : [ ],
+                  "where" : {
+                     "localId" : "75",
+                     "locator" : "56:4-56:99",
+                     "precision" : "Day",
+                     "type" : "In",
+                     "operand" : [ {
+                        "locator" : "56:37-56:40",
+                        "type" : "End",
+                        "operand" : {
+                           "localId" : "72",
+                           "locator" : "56:12-56:35",
+                           "path" : "relevantPeriod",
+                           "scope" : "Mammogram",
+                           "type" : "Property"
+                        }
+                     }, {
+                        "locator" : "56:42-56:58",
+                        "lowClosed" : true,
+                        "highClosed" : false,
+                        "type" : "Interval",
+                        "low" : {
+                           "locator" : "56:74-56:76",
+                           "type" : "Subtract",
+                           "operand" : [ {
+                              "locator" : "56:74-56:76",
+                              "type" : "End",
+                              "operand" : {
+                                 "localId" : "73",
+                                 "locator" : "56:78-56:97",
+                                 "name" : "Measurement Period",
+                                 "type" : "ParameterRef"
+                              }
+                           }, {
+                              "localId" : "74",
+                              "locator" : "56:42-56:50",
+                              "value" : 27,
+                              "unit" : "months",
+                              "type" : "Quantity"
+                           } ]
+                        },
+                        "high" : {
+                           "locator" : "56:74-56:76",
+                           "type" : "End",
+                           "operand" : {
+                              "localId" : "73",
+                              "locator" : "56:78-56:97",
+                              "name" : "Measurement Period",
+                              "type" : "ParameterRef"
+                           }
+                        }
+                     } ]
+                  }
+               }
+            }
+         }, {
+            "localId" : "87",
+            "locator" : "59:1-61:97",
+            "name" : "Left Mastectomy Procedure",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "87",
+                  "s" : [ {
+                     "value" : [ "define ","\"Left Mastectomy Procedure\"",":\n\t" ]
+                  }, {
+                     "r" : "86",
+                     "s" : [ {
+                        "s" : [ {
+                           "r" : "80",
+                           "s" : [ {
+                              "r" : "79",
+                              "s" : [ {
+                                 "r" : "79",
+                                 "s" : [ {
+                                    "value" : [ "[","\"Procedure, Performed\"",": " ]
+                                 }, {
+                                    "s" : [ {
+                                       "value" : [ "\"Unilateral Mastectomy Left\"" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "]" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ " ","UnilateralMastectomyLeftPerformed" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ "\r\n\t\t\t" ]
+                     }, {
+                        "r" : "85",
+                        "s" : [ {
+                           "value" : [ "where " ]
+                        }, {
+                           "r" : "85",
+                           "s" : [ {
+                              "r" : "82",
+                              "s" : [ {
+                                 "r" : "81",
+                                 "s" : [ {
+                                    "value" : [ "UnilateralMastectomyLeftPerformed" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "82",
+                                 "s" : [ {
+                                    "value" : [ "relevantPeriod" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ " ","ends before"," " ]
+                           }, {
+                              "r" : "84",
+                              "s" : [ {
+                                 "value" : [ "end of " ]
+                              }, {
+                                 "r" : "83",
+                                 "s" : [ {
+                                    "value" : [ "\"Measurement Period\"" ]
+                                 } ]
+                              } ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "86",
+               "locator" : "60:2-61:97",
+               "type" : "Query",
+               "source" : [ {
+                  "localId" : "80",
+                  "locator" : "60:2-60:89",
+                  "alias" : "UnilateralMastectomyLeftPerformed",
+                  "expression" : {
+                     "localId" : "79",
+                     "locator" : "60:2-60:55",
+                     "dataType" : "{urn:healthit-gov:qdm:v5_4}PositiveProcedurePerformed",
+                     "templateId" : "PositiveProcedurePerformed",
+                     "codeProperty" : "code",
+                     "type" : "Retrieve",
+                     "codes" : {
+                        "name" : "Unilateral Mastectomy Left",
+                        "type" : "ValueSetRef"
+                     }
+                  }
+               } ],
+               "relationship" : [ ],
+               "where" : {
+                  "localId" : "85",
+                  "locator" : "61:4-61:97",
+                  "type" : "Before",
+                  "operand" : [ {
+                     "locator" : "61:59-61:62",
+                     "type" : "End",
+                     "operand" : {
+                        "localId" : "82",
+                        "locator" : "61:10-61:57",
+                        "path" : "relevantPeriod",
+                        "scope" : "UnilateralMastectomyLeftPerformed",
+                        "type" : "Property"
+                     }
+                  }, {
+                     "localId" : "84",
+                     "locator" : "61:71-61:97",
+                     "type" : "End",
+                     "operand" : {
+                        "localId" : "83",
+                        "locator" : "61:78-61:97",
+                        "name" : "Measurement Period",
+                        "type" : "ParameterRef"
+                     }
+                  } ]
+               }
+            }
+         }, {
+            "localId" : "96",
+            "locator" : "63:1-65:98",
+            "name" : "Right Mastectomy Procedure",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "96",
+                  "s" : [ {
+                     "value" : [ "define ","\"Right Mastectomy Procedure\"",":\n\t" ]
+                  }, {
+                     "r" : "95",
+                     "s" : [ {
+                        "s" : [ {
+                           "r" : "89",
+                           "s" : [ {
+                              "r" : "88",
+                              "s" : [ {
+                                 "r" : "88",
+                                 "s" : [ {
+                                    "value" : [ "[","\"Procedure, Performed\"",": " ]
+                                 }, {
+                                    "s" : [ {
+                                       "value" : [ "\"Unilateral Mastectomy Right\"" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "]" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ " ","UnilateralMastectomyRightPerformed" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ "\r\n\t\t\t" ]
+                     }, {
+                        "r" : "94",
+                        "s" : [ {
+                           "value" : [ "where " ]
+                        }, {
+                           "r" : "94",
+                           "s" : [ {
+                              "r" : "91",
+                              "s" : [ {
+                                 "r" : "90",
+                                 "s" : [ {
+                                    "value" : [ "UnilateralMastectomyRightPerformed" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "91",
+                                 "s" : [ {
+                                    "value" : [ "relevantPeriod" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ " ","ends before"," " ]
+                           }, {
+                              "r" : "93",
+                              "s" : [ {
+                                 "value" : [ "end of " ]
+                              }, {
+                                 "r" : "92",
+                                 "s" : [ {
+                                    "value" : [ "\"Measurement Period\"" ]
+                                 } ]
+                              } ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "95",
+               "locator" : "64:2-65:98",
+               "type" : "Query",
+               "source" : [ {
+                  "localId" : "89",
+                  "locator" : "64:2-64:91",
+                  "alias" : "UnilateralMastectomyRightPerformed",
+                  "expression" : {
+                     "localId" : "88",
+                     "locator" : "64:2-64:56",
+                     "dataType" : "{urn:healthit-gov:qdm:v5_4}PositiveProcedurePerformed",
+                     "templateId" : "PositiveProcedurePerformed",
+                     "codeProperty" : "code",
+                     "type" : "Retrieve",
+                     "codes" : {
+                        "name" : "Unilateral Mastectomy Right",
+                        "type" : "ValueSetRef"
+                     }
+                  }
+               } ],
+               "relationship" : [ ],
+               "where" : {
+                  "localId" : "94",
+                  "locator" : "65:4-65:98",
+                  "type" : "Before",
+                  "operand" : [ {
+                     "locator" : "65:60-65:63",
+                     "type" : "End",
+                     "operand" : {
+                        "localId" : "91",
+                        "locator" : "65:10-65:58",
+                        "path" : "relevantPeriod",
+                        "scope" : "UnilateralMastectomyRightPerformed",
+                        "type" : "Property"
+                     }
+                  }, {
+                     "localId" : "93",
+                     "locator" : "65:72-65:98",
+                     "type" : "End",
+                     "operand" : {
+                        "localId" : "92",
+                        "locator" : "65:79-65:98",
+                        "name" : "Measurement Period",
+                        "type" : "ParameterRef"
+                     }
+                  } ]
+               }
+            }
+         }, {
+            "localId" : "105",
+            "locator" : "67:1-70:29",
+            "name" : "Unilateral Mastectomy Procedure",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "105",
+                  "s" : [ {
+                     "value" : [ "define ","\"Unilateral Mastectomy Procedure\"",":\n\t" ]
+                  }, {
+                     "r" : "104",
+                     "s" : [ {
+                        "s" : [ {
+                           "r" : "98",
+                           "s" : [ {
+                              "r" : "97",
+                              "s" : [ {
+                                 "r" : "97",
+                                 "s" : [ {
+                                    "value" : [ "[","\"Procedure, Performed\"",": " ]
+                                 }, {
+                                    "s" : [ {
+                                       "value" : [ "\"Unilateral Mastectomy\"" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "]" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ " ","UnilateralMastectomy" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ "\n\t\t" ]
+                     }, {
+                        "r" : "103",
+                        "s" : [ {
+                           "value" : [ "where " ]
+                        }, {
+                           "r" : "103",
+                           "s" : [ {
+                              "r" : "100",
+                              "s" : [ {
+                                 "r" : "99",
+                                 "s" : [ {
+                                    "value" : [ "UnilateralMastectomy" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "100",
+                                 "s" : [ {
+                                    "value" : [ "relevantPeriod" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ " ","ends before"," \n\t\t" ]
+                           }, {
+                              "r" : "102",
+                              "s" : [ {
+                                 "value" : [ "end of " ]
+                              }, {
+                                 "r" : "101",
+                                 "s" : [ {
+                                    "value" : [ "\"Measurement Period\"" ]
+                                 } ]
+                              } ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "104",
+               "locator" : "68:2-70:29",
+               "type" : "Query",
+               "source" : [ {
+                  "localId" : "98",
+                  "locator" : "68:2-68:71",
+                  "alias" : "UnilateralMastectomy",
+                  "expression" : {
+                     "localId" : "97",
+                     "locator" : "68:2-68:50",
+                     "dataType" : "{urn:healthit-gov:qdm:v5_4}PositiveProcedurePerformed",
+                     "templateId" : "PositiveProcedurePerformed",
+                     "codeProperty" : "code",
+                     "type" : "Retrieve",
+                     "codes" : {
+                        "name" : "Unilateral Mastectomy",
+                        "type" : "ValueSetRef"
+                     }
+                  }
+               } ],
+               "relationship" : [ ],
+               "where" : {
+                  "localId" : "103",
+                  "locator" : "69:3-70:29",
+                  "type" : "Before",
+                  "operand" : [ {
+                     "locator" : "69:45-69:48",
+                     "type" : "End",
+                     "operand" : {
+                        "localId" : "100",
+                        "locator" : "69:9-69:43",
+                        "path" : "relevantPeriod",
+                        "scope" : "UnilateralMastectomy",
+                        "type" : "Property"
+                     }
+                  }, {
+                     "localId" : "102",
+                     "locator" : "70:3-70:29",
+                     "type" : "End",
+                     "operand" : {
+                        "localId" : "101",
+                        "locator" : "70:10-70:29",
+                        "name" : "Measurement Period",
+                        "type" : "ParameterRef"
+                     }
+                  } ]
+               }
+            }
+         }, {
+            "localId" : "114",
+            "locator" : "72:1-75:29",
+            "name" : "Bilateral Mastectomy Diagnosis",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "114",
+                  "s" : [ {
+                     "value" : [ "define ","\"Bilateral Mastectomy Diagnosis\"",":\n\t" ]
+                  }, {
+                     "r" : "113",
+                     "s" : [ {
+                        "s" : [ {
+                           "r" : "107",
+                           "s" : [ {
+                              "r" : "106",
+                              "s" : [ {
+                                 "r" : "106",
+                                 "s" : [ {
+                                    "value" : [ "[","\"Diagnosis\"",": " ]
+                                 }, {
+                                    "s" : [ {
+                                       "value" : [ "\"History of bilateral mastectomy\"" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "]" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ " ","BilateralMastectomyHistory" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ "\n\t\t" ]
+                     }, {
+                        "r" : "112",
+                        "s" : [ {
+                           "value" : [ "where " ]
+                        }, {
+                           "r" : "112",
+                           "s" : [ {
+                              "r" : "109",
+                              "s" : [ {
+                                 "r" : "108",
+                                 "s" : [ {
+                                    "value" : [ "BilateralMastectomyHistory" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "109",
+                                 "s" : [ {
+                                    "value" : [ "prevalencePeriod" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ " ","starts before"," \n\t\t" ]
+                           }, {
+                              "r" : "111",
+                              "s" : [ {
+                                 "value" : [ "end of " ]
+                              }, {
+                                 "r" : "110",
+                                 "s" : [ {
+                                    "value" : [ "\"Measurement Period\"" ]
+                                 } ]
+                              } ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "113",
+               "locator" : "73:2-75:29",
+               "type" : "Query",
+               "source" : [ {
+                  "localId" : "107",
+                  "locator" : "73:2-73:76",
+                  "alias" : "BilateralMastectomyHistory",
+                  "expression" : {
+                     "localId" : "106",
+                     "locator" : "73:2-73:49",
+                     "dataType" : "{urn:healthit-gov:qdm:v5_4}Diagnosis",
+                     "codeProperty" : "code",
+                     "type" : "Retrieve",
+                     "codes" : {
+                        "name" : "History of bilateral mastectomy",
+                        "type" : "ValueSetRef"
+                     }
+                  }
+               } ],
+               "relationship" : [ ],
+               "where" : {
+                  "localId" : "112",
+                  "locator" : "74:3-75:29",
+                  "type" : "Before",
+                  "operand" : [ {
+                     "locator" : "74:53-74:58",
+                     "type" : "Start",
+                     "operand" : {
+                        "localId" : "109",
+                        "locator" : "74:9-74:51",
+                        "path" : "prevalencePeriod",
+                        "scope" : "BilateralMastectomyHistory",
+                        "type" : "Property"
+                     }
+                  }, {
+                     "localId" : "111",
+                     "locator" : "75:3-75:29",
+                     "type" : "End",
+                     "operand" : {
+                        "localId" : "110",
+                        "locator" : "75:10-75:29",
+                        "name" : "Measurement Period",
+                        "type" : "ParameterRef"
+                     }
+                  } ]
+               }
+            }
+         }, {
+            "localId" : "131",
+            "locator" : "77:1-83:29",
+            "name" : "Left Mastectomy Diagnosis",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "131",
+                  "s" : [ {
+                     "value" : [ "define ","\"Left Mastectomy Diagnosis\"",":\n\t" ]
+                  }, {
+                     "r" : "130",
+                     "s" : [ {
+                        "s" : [ {
+                           "r" : "124",
+                           "s" : [ {
+                              "r" : "123",
+                              "s" : [ {
+                                 "value" : [ "( " ]
+                              }, {
+                                 "r" : "123",
+                                 "s" : [ {
+                                    "r" : "115",
+                                    "s" : [ {
+                                       "value" : [ "[","\"Diagnosis\"",": " ]
+                                    }, {
+                                       "s" : [ {
+                                          "value" : [ "\"Status Post Left Mastectomy\"" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "]" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "\n\t\tunion " ]
+                                 }, {
+                                    "r" : "122",
+                                    "s" : [ {
+                                       "value" : [ "( " ]
+                                    }, {
+                                       "r" : "122",
+                                       "s" : [ {
+                                          "s" : [ {
+                                             "r" : "117",
+                                             "s" : [ {
+                                                "r" : "116",
+                                                "s" : [ {
+                                                   "r" : "116",
+                                                   "s" : [ {
+                                                      "value" : [ "[","\"Diagnosis\"",": " ]
+                                                   }, {
+                                                      "s" : [ {
+                                                         "value" : [ "\"Unilateral Mastectomy, Unspecified Laterality\"" ]
+                                                      } ]
+                                                   }, {
+                                                      "value" : [ "]" ]
+                                                   } ]
+                                                } ]
+                                             }, {
+                                                "value" : [ " ","UnilateralMastectomyDiagnosis" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "\n\t\t\t\t" ]
+                                       }, {
+                                          "r" : "121",
+                                          "s" : [ {
+                                             "value" : [ "where " ]
+                                          }, {
+                                             "r" : "121",
+                                             "s" : [ {
+                                                "r" : "119",
+                                                "s" : [ {
+                                                   "r" : "118",
+                                                   "s" : [ {
+                                                      "value" : [ "UnilateralMastectomyDiagnosis" ]
+                                                   } ]
+                                                }, {
+                                                   "value" : [ "." ]
+                                                }, {
+                                                   "r" : "119",
+                                                   "s" : [ {
+                                                      "value" : [ "anatomicalLocationSite" ]
+                                                   } ]
+                                                } ]
+                                             }, {
+                                                "value" : [ " in " ]
+                                             }, {
+                                                "r" : "120",
+                                                "s" : [ {
+                                                   "value" : [ "\"Left\"" ]
+                                                } ]
+                                             } ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "\n\t\t)" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ " )" ]
+                              } ]
+                           }, {
+                              "value" : [ " ","LeftMastectomy" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ "\n\t\t" ]
+                     }, {
+                        "r" : "129",
+                        "s" : [ {
+                           "value" : [ "where " ]
+                        }, {
+                           "r" : "129",
+                           "s" : [ {
+                              "r" : "126",
+                              "s" : [ {
+                                 "r" : "125",
+                                 "s" : [ {
+                                    "value" : [ "LeftMastectomy" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "126",
+                                 "s" : [ {
+                                    "value" : [ "prevalencePeriod" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ " ","starts before"," \n\t\t" ]
+                           }, {
+                              "r" : "128",
+                              "s" : [ {
+                                 "value" : [ "end of " ]
+                              }, {
+                                 "r" : "127",
+                                 "s" : [ {
+                                    "value" : [ "\"Measurement Period\"" ]
+                                 } ]
+                              } ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "130",
+               "locator" : "78:2-83:29",
+               "type" : "Query",
+               "source" : [ {
+                  "localId" : "124",
+                  "locator" : "78:2-81:20",
+                  "alias" : "LeftMastectomy",
+                  "expression" : {
+                     "localId" : "123",
+                     "locator" : "78:2-81:5",
+                     "type" : "Union",
+                     "operand" : [ {
+                        "localId" : "115",
+                        "locator" : "78:4-78:47",
+                        "dataType" : "{urn:healthit-gov:qdm:v5_4}Diagnosis",
+                        "codeProperty" : "code",
+                        "type" : "Retrieve",
+                        "codes" : {
+                           "name" : "Status Post Left Mastectomy",
+                           "type" : "ValueSetRef"
+                        }
+                     }, {
+                        "localId" : "122",
+                        "locator" : "79:9-81:3",
+                        "type" : "Query",
+                        "source" : [ {
+                           "localId" : "117",
+                           "locator" : "79:11-79:102",
+                           "alias" : "UnilateralMastectomyDiagnosis",
+                           "expression" : {
+                              "localId" : "116",
+                              "locator" : "79:11-79:72",
+                              "dataType" : "{urn:healthit-gov:qdm:v5_4}Diagnosis",
+                              "codeProperty" : "code",
+                              "type" : "Retrieve",
+                              "codes" : {
+                                 "name" : "Unilateral Mastectomy, Unspecified Laterality",
+                                 "type" : "ValueSetRef"
+                              }
+                           }
+                        } ],
+                        "relationship" : [ ],
+                        "where" : {
+                           "localId" : "121",
+                           "locator" : "80:5-80:72",
+                           "type" : "InValueSet",
+                           "code" : {
+                              "localId" : "119",
+                              "locator" : "80:11-80:62",
+                              "path" : "anatomicalLocationSite",
+                              "scope" : "UnilateralMastectomyDiagnosis",
+                              "type" : "Property"
+                           },
+                           "valueset" : {
+                              "localId" : "120",
+                              "locator" : "80:67-80:72",
+                              "name" : "Left"
+                           }
+                        }
+                     } ]
+                  }
+               } ],
+               "relationship" : [ ],
+               "where" : {
+                  "localId" : "129",
+                  "locator" : "82:3-83:29",
+                  "type" : "Before",
+                  "operand" : [ {
+                     "locator" : "82:41-82:46",
+                     "type" : "Start",
+                     "operand" : {
+                        "localId" : "126",
+                        "locator" : "82:9-82:39",
+                        "path" : "prevalencePeriod",
+                        "scope" : "LeftMastectomy",
+                        "type" : "Property"
+                     }
+                  }, {
+                     "localId" : "128",
+                     "locator" : "83:3-83:29",
+                     "type" : "End",
+                     "operand" : {
+                        "localId" : "127",
+                        "locator" : "83:10-83:29",
+                        "name" : "Measurement Period",
+                        "type" : "ParameterRef"
+                     }
+                  } ]
+               }
+            }
+         }, {
+            "localId" : "150",
+            "locator" : "85:1-91:29",
+            "name" : "Right Mastectomy Diagnosis",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "150",
+                  "s" : [ {
+                     "value" : [ "define ","\"Right Mastectomy Diagnosis\"",":\n\t" ]
+                  }, {
+                     "r" : "149",
+                     "s" : [ {
+                        "s" : [ {
+                           "r" : "143",
+                           "s" : [ {
+                              "r" : "142",
+                              "s" : [ {
+                                 "value" : [ "( " ]
+                              }, {
+                                 "r" : "142",
+                                 "s" : [ {
+                                    "r" : "134",
+                                    "s" : [ {
+                                       "s" : [ {
+                                          "r" : "133",
+                                          "s" : [ {
+                                             "r" : "132",
+                                             "s" : [ {
+                                                "r" : "132",
+                                                "s" : [ {
+                                                   "value" : [ "[","\"Diagnosis\"",": " ]
+                                                }, {
+                                                   "s" : [ {
+                                                      "value" : [ "\"Status Post Right Mastectomy\"" ]
+                                                   } ]
+                                                }, {
+                                                   "value" : [ "]" ]
+                                                } ]
+                                             } ]
+                                          }, {
+                                             "value" : [ " ","RightMastectomyProcedure" ]
+                                          } ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "\n\t\tunion " ]
+                                 }, {
+                                    "r" : "141",
+                                    "s" : [ {
+                                       "value" : [ "( " ]
+                                    }, {
+                                       "r" : "141",
+                                       "s" : [ {
+                                          "s" : [ {
+                                             "r" : "136",
+                                             "s" : [ {
+                                                "r" : "135",
+                                                "s" : [ {
+                                                   "r" : "135",
+                                                   "s" : [ {
+                                                      "value" : [ "[","\"Diagnosis\"",": " ]
+                                                   }, {
+                                                      "s" : [ {
+                                                         "value" : [ "\"Unilateral Mastectomy, Unspecified Laterality\"" ]
+                                                      } ]
+                                                   }, {
+                                                      "value" : [ "]" ]
+                                                   } ]
+                                                } ]
+                                             }, {
+                                                "value" : [ " ","UnilateralMastectomyDiagnosis" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "\n\t\t\t\t" ]
+                                       }, {
+                                          "r" : "140",
+                                          "s" : [ {
+                                             "value" : [ "where " ]
+                                          }, {
+                                             "r" : "140",
+                                             "s" : [ {
+                                                "r" : "138",
+                                                "s" : [ {
+                                                   "r" : "137",
+                                                   "s" : [ {
+                                                      "value" : [ "UnilateralMastectomyDiagnosis" ]
+                                                   } ]
+                                                }, {
+                                                   "value" : [ "." ]
+                                                }, {
+                                                   "r" : "138",
+                                                   "s" : [ {
+                                                      "value" : [ "anatomicalLocationSite" ]
+                                                   } ]
+                                                } ]
+                                             }, {
+                                                "value" : [ " in " ]
+                                             }, {
+                                                "r" : "139",
+                                                "s" : [ {
+                                                   "value" : [ "\"Right\"" ]
+                                                } ]
+                                             } ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "\n\t\t)" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ " )" ]
+                              } ]
+                           }, {
+                              "value" : [ " ","RightMastectomy" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ "\n\t\t" ]
+                     }, {
+                        "r" : "148",
+                        "s" : [ {
+                           "value" : [ "where " ]
+                        }, {
+                           "r" : "148",
+                           "s" : [ {
+                              "r" : "145",
+                              "s" : [ {
+                                 "r" : "144",
+                                 "s" : [ {
+                                    "value" : [ "RightMastectomy" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "145",
+                                 "s" : [ {
+                                    "value" : [ "prevalencePeriod" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ " ","starts before"," \n\t\t" ]
+                           }, {
+                              "r" : "147",
+                              "s" : [ {
+                                 "value" : [ "end of " ]
+                              }, {
+                                 "r" : "146",
+                                 "s" : [ {
+                                    "value" : [ "\"Measurement Period\"" ]
+                                 } ]
+                              } ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "149",
+               "locator" : "86:2-91:29",
+               "type" : "Query",
+               "source" : [ {
+                  "localId" : "143",
+                  "locator" : "86:2-89:21",
+                  "alias" : "RightMastectomy",
+                  "expression" : {
+                     "localId" : "142",
+                     "locator" : "86:2-89:5",
+                     "type" : "Union",
+                     "operand" : [ {
+                        "localId" : "134",
+                        "locator" : "86:4-86:73",
+                        "type" : "Query",
+                        "source" : [ {
+                           "localId" : "133",
+                           "locator" : "86:4-86:73",
+                           "alias" : "RightMastectomyProcedure",
+                           "expression" : {
+                              "localId" : "132",
+                              "locator" : "86:4-86:48",
+                              "dataType" : "{urn:healthit-gov:qdm:v5_4}Diagnosis",
+                              "codeProperty" : "code",
+                              "type" : "Retrieve",
+                              "codes" : {
+                                 "name" : "Status Post Right Mastectomy",
+                                 "type" : "ValueSetRef"
+                              }
+                           }
+                        } ],
+                        "relationship" : [ ]
+                     }, {
+                        "localId" : "141",
+                        "locator" : "87:9-89:3",
+                        "type" : "Query",
+                        "source" : [ {
+                           "localId" : "136",
+                           "locator" : "87:11-87:102",
+                           "alias" : "UnilateralMastectomyDiagnosis",
+                           "expression" : {
+                              "localId" : "135",
+                              "locator" : "87:11-87:72",
+                              "dataType" : "{urn:healthit-gov:qdm:v5_4}Diagnosis",
+                              "codeProperty" : "code",
+                              "type" : "Retrieve",
+                              "codes" : {
+                                 "name" : "Unilateral Mastectomy, Unspecified Laterality",
+                                 "type" : "ValueSetRef"
+                              }
+                           }
+                        } ],
+                        "relationship" : [ ],
+                        "where" : {
+                           "localId" : "140",
+                           "locator" : "88:5-88:73",
+                           "type" : "InValueSet",
+                           "code" : {
+                              "localId" : "138",
+                              "locator" : "88:11-88:62",
+                              "path" : "anatomicalLocationSite",
+                              "scope" : "UnilateralMastectomyDiagnosis",
+                              "type" : "Property"
+                           },
+                           "valueset" : {
+                              "localId" : "139",
+                              "locator" : "88:67-88:73",
+                              "name" : "Right"
+                           }
+                        }
+                     } ]
+                  }
+               } ],
+               "relationship" : [ ],
+               "where" : {
+                  "localId" : "148",
+                  "locator" : "90:3-91:29",
+                  "type" : "Before",
+                  "operand" : [ {
+                     "locator" : "90:42-90:47",
+                     "type" : "Start",
+                     "operand" : {
+                        "localId" : "145",
+                        "locator" : "90:9-90:40",
+                        "path" : "prevalencePeriod",
+                        "scope" : "RightMastectomy",
+                        "type" : "Property"
+                     }
+                  }, {
+                     "localId" : "147",
+                     "locator" : "91:3-91:29",
+                     "type" : "End",
+                     "operand" : {
+                        "localId" : "146",
+                        "locator" : "91:10-91:29",
+                        "name" : "Measurement Period",
+                        "type" : "ParameterRef"
+                     }
+                  } ]
+               }
+            }
+         }, {
+            "localId" : "195",
+            "locator" : "99:1-115:3",
+            "name" : "Denominator Exclusions",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "195",
+                  "s" : [ {
+                     "value" : [ "define ","\"Denominator Exclusions\"",":\n\t" ]
+                  }, {
+                     "r" : "194",
+                     "s" : [ {
+                        "r" : "178",
+                        "s" : [ {
+                           "r" : "175",
+                           "s" : [ {
+                              "r" : "172",
+                              "s" : [ {
+                                 "r" : "169",
+                                 "s" : [ {
+                                    "r" : "157",
+                                    "s" : [ {
+                                       "r" : "152",
+                                       "s" : [ {
+                                          "r" : "151",
+                                          "s" : [ {
+                                             "value" : [ "Hospice" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "152",
+                                          "s" : [ {
+                                             "value" : [ "\"Has Hospice\"" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "\n\t\tor " ]
+                                    }, {
+                                       "r" : "156",
+                                       "s" : [ {
+                                          "value" : [ "( " ]
+                                       }, {
+                                          "r" : "156",
+                                          "s" : [ {
+                                             "r" : "154",
+                                             "s" : [ {
+                                                "value" : [ "Count","(" ]
+                                             }, {
+                                                "r" : "153",
+                                                "s" : [ {
+                                                   "value" : [ "\"Unilateral Mastectomy Procedure\"" ]
+                                                } ]
+                                             }, {
+                                                "value" : [ ")" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "="," ","2" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ " )" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "\n\t\tor " ]
+                                 }, {
+                                    "r" : "168",
+                                    "s" : [ {
+                                       "value" : [ "( " ]
+                                    }, {
+                                       "r" : "168",
+                                       "s" : [ {
+                                          "r" : "162",
+                                          "s" : [ {
+                                             "value" : [ "( " ]
+                                          }, {
+                                             "r" : "162",
+                                             "s" : [ {
+                                                "r" : "159",
+                                                "s" : [ {
+                                                   "value" : [ "exists " ]
+                                                }, {
+                                                   "r" : "158",
+                                                   "s" : [ {
+                                                      "value" : [ "( " ]
+                                                   }, {
+                                                      "r" : "158",
+                                                      "s" : [ {
+                                                         "value" : [ "\"Right Mastectomy Diagnosis\"" ]
+                                                      } ]
+                                                   }, {
+                                                      "value" : [ " )" ]
+                                                   } ]
+                                                } ]
+                                             }, {
+                                                "value" : [ "\n\t\t\t\t\tor " ]
+                                             }, {
+                                                "r" : "161",
+                                                "s" : [ {
+                                                   "value" : [ "exists " ]
+                                                }, {
+                                                   "r" : "160",
+                                                   "s" : [ {
+                                                      "value" : [ "( " ]
+                                                   }, {
+                                                      "r" : "160",
+                                                      "s" : [ {
+                                                         "value" : [ "\"Right Mastectomy Procedure\"" ]
+                                                      } ]
+                                                   }, {
+                                                      "value" : [ " )" ]
+                                                   } ]
+                                                } ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "\n\t\t\t)" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "\n\t\t\t\tand " ]
+                                       }, {
+                                          "r" : "167",
+                                          "s" : [ {
+                                             "value" : [ "( " ]
+                                          }, {
+                                             "r" : "167",
+                                             "s" : [ {
+                                                "r" : "164",
+                                                "s" : [ {
+                                                   "value" : [ "exists " ]
+                                                }, {
+                                                   "r" : "163",
+                                                   "s" : [ {
+                                                      "value" : [ "( " ]
+                                                   }, {
+                                                      "r" : "163",
+                                                      "s" : [ {
+                                                         "value" : [ "\"Left Mastectomy Diagnosis\"" ]
+                                                      } ]
+                                                   }, {
+                                                      "value" : [ " )" ]
+                                                   } ]
+                                                } ]
+                                             }, {
+                                                "value" : [ "\n\t\t\t\t\t\tor " ]
+                                             }, {
+                                                "r" : "166",
+                                                "s" : [ {
+                                                   "value" : [ "exists " ]
+                                                }, {
+                                                   "r" : "165",
+                                                   "s" : [ {
+                                                      "value" : [ "( " ]
+                                                   }, {
+                                                      "r" : "165",
+                                                      "s" : [ {
+                                                         "value" : [ "\"Left Mastectomy Procedure\"" ]
+                                                      } ]
+                                                   }, {
+                                                      "value" : [ " )" ]
+                                                   } ]
+                                                } ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "\n\t\t\t\t)" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "\n\t\t)" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ "\n\t\tor " ]
+                              }, {
+                                 "r" : "171",
+                                 "s" : [ {
+                                    "value" : [ "exists " ]
+                                 }, {
+                                    "r" : "170",
+                                    "s" : [ {
+                                       "value" : [ "\"Bilateral Mastectomy Diagnosis\"" ]
+                                    } ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n\t\tor " ]
+                           }, {
+                              "r" : "174",
+                              "s" : [ {
+                                 "value" : [ "exists " ]
+                              }, {
+                                 "r" : "173",
+                                 "s" : [ {
+                                    "value" : [ "\"Bilateral Mastectomy Procedure\"" ]
+                                 } ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n\t\tor " ]
+                        }, {
+                           "r" : "177",
+                           "s" : [ {
+                              "r" : "176",
+                              "s" : [ {
+                                 "value" : [ "FrailtyLTI" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "177",
+                              "s" : [ {
+                                 "value" : [ "\"Advanced Illness and Frailty Exclusion Including Under Age 80\"" ]
+                              } ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ "\n\t\tor " ]
+                     }, {
+                        "r" : "193",
+                        "s" : [ {
+                           "value" : [ "( " ]
+                        }, {
+                           "r" : "193",
+                           "s" : [ {
+                              "value" : [ "exists " ]
+                           }, {
+                              "r" : "192",
+                              "s" : [ {
+                                 "s" : [ {
+                                    "r" : "180",
+                                    "s" : [ {
+                                       "r" : "179",
+                                       "s" : [ {
+                                          "r" : "179",
+                                          "s" : [ {
+                                             "value" : [ "[","\"Patient Characteristic Birthdate\"",": " ]
+                                          }, {
+                                             "s" : [ {
+                                                "value" : [ "\"Birth date\"" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "]" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " ","BirthDate" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ "\n\t\t\t\t" ]
+                              }, {
+                                 "r" : "191",
+                                 "s" : [ {
+                                    "value" : [ "where " ]
+                                 }, {
+                                    "r" : "191",
+                                    "s" : [ {
+                                       "r" : "188",
+                                       "s" : [ {
+                                          "value" : [ "( " ]
+                                       }, {
+                                          "r" : "188",
+                                          "s" : [ {
+                                             "r" : "186",
+                                             "s" : [ {
+                                                "r" : "181",
+                                                "s" : [ {
+                                                   "value" : [ "Global" ]
+                                                } ]
+                                             }, {
+                                                "value" : [ "." ]
+                                             }, {
+                                                "r" : "186",
+                                                "s" : [ {
+                                                   "value" : [ "\"CalendarAgeInYearsAt\"","(" ]
+                                                }, {
+                                                   "r" : "183",
+                                                   "s" : [ {
+                                                      "r" : "182",
+                                                      "s" : [ {
+                                                         "value" : [ "BirthDate" ]
+                                                      } ]
+                                                   }, {
+                                                      "value" : [ "." ]
+                                                   }, {
+                                                      "r" : "183",
+                                                      "s" : [ {
+                                                         "value" : [ "birthDatetime" ]
+                                                      } ]
+                                                   } ]
+                                                }, {
+                                                   "value" : [ ", " ]
+                                                }, {
+                                                   "r" : "185",
+                                                   "s" : [ {
+                                                      "value" : [ "start of " ]
+                                                   }, {
+                                                      "r" : "184",
+                                                      "s" : [ {
+                                                         "value" : [ "\"Measurement Period\"" ]
+                                                      } ]
+                                                   } ]
+                                                }, {
+                                                   "value" : [ ")" ]
+                                                } ]
+                                             } ]
+                                          }, {
+                                             "value" : [ ">="," ","65" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ " )" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "\n\t\t\t\t\tand " ]
+                                    }, {
+                                       "r" : "190",
+                                       "s" : [ {
+                                          "r" : "189",
+                                          "s" : [ {
+                                             "value" : [ "FrailtyLTI" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "190",
+                                          "s" : [ {
+                                             "value" : [ "\"Has Spent More Than 90 Days in Long Term Care\"" ]
+                                          } ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n\t\t)" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "194",
+               "locator" : "100:2-115:3",
+               "type" : "Or",
+               "operand" : [ {
+                  "localId" : "178",
+                  "locator" : "100:2-111:79",
+                  "type" : "Or",
+                  "operand" : [ {
+                     "localId" : "175",
+                     "locator" : "100:2-110:44",
+                     "type" : "Or",
+                     "operand" : [ {
+                        "localId" : "172",
+                        "locator" : "100:2-109:44",
+                        "type" : "Or",
+                        "operand" : [ {
+                           "localId" : "169",
+                           "locator" : "100:2-108:3",
+                           "type" : "Or",
+                           "operand" : [ {
+                              "localId" : "157",
+                              "locator" : "100:2-101:52",
+                              "type" : "Or",
+                              "operand" : [ {
+                                 "localId" : "152",
+                                 "locator" : "100:2-100:22",
+                                 "name" : "Has Hospice",
+                                 "libraryName" : "Hospice",
+                                 "type" : "ExpressionRef"
+                              }, {
+                                 "localId" : "156",
+                                 "locator" : "101:6-101:52",
+                                 "type" : "Equal",
+                                 "operand" : [ {
+                                    "localId" : "154",
+                                    "locator" : "101:8-101:47",
+                                    "type" : "Count",
+                                    "source" : {
+                                       "localId" : "153",
+                                       "locator" : "101:14-101:46",
+                                       "name" : "Unilateral Mastectomy Procedure",
+                                       "type" : "ExpressionRef"
+                                    }
+                                 }, {
+                                    "localId" : "155",
+                                    "locator" : "101:50",
+                                    "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                                    "value" : "2",
+                                    "type" : "Literal"
+                                 } ]
+                              } ]
+                           }, {
+                              "localId" : "168",
+                              "locator" : "102:6-108:3",
+                              "type" : "And",
+                              "operand" : [ {
+                                 "localId" : "162",
+                                 "locator" : "102:8-104:4",
+                                 "type" : "Or",
+                                 "operand" : [ {
+                                    "localId" : "159",
+                                    "locator" : "102:10-102:48",
+                                    "type" : "Exists",
+                                    "operand" : {
+                                       "localId" : "158",
+                                       "locator" : "102:17-102:48",
+                                       "name" : "Right Mastectomy Diagnosis",
+                                       "type" : "ExpressionRef"
+                                    }
+                                 }, {
+                                    "localId" : "161",
+                                    "locator" : "103:9-103:47",
+                                    "type" : "Exists",
+                                    "operand" : {
+                                       "localId" : "160",
+                                       "locator" : "103:16-103:47",
+                                       "name" : "Right Mastectomy Procedure",
+                                       "type" : "ExpressionRef"
+                                    }
+                                 } ]
+                              }, {
+                                 "localId" : "167",
+                                 "locator" : "105:9-107:5",
+                                 "type" : "Or",
+                                 "operand" : [ {
+                                    "localId" : "164",
+                                    "locator" : "105:11-105:48",
+                                    "type" : "Exists",
+                                    "operand" : {
+                                       "localId" : "163",
+                                       "locator" : "105:18-105:48",
+                                       "name" : "Left Mastectomy Diagnosis",
+                                       "type" : "ExpressionRef"
+                                    }
+                                 }, {
+                                    "localId" : "166",
+                                    "locator" : "106:10-106:47",
+                                    "type" : "Exists",
+                                    "operand" : {
+                                       "localId" : "165",
+                                       "locator" : "106:17-106:47",
+                                       "name" : "Left Mastectomy Procedure",
+                                       "type" : "ExpressionRef"
+                                    }
+                                 } ]
+                              } ]
+                           } ]
+                        }, {
+                           "localId" : "171",
+                           "locator" : "109:6-109:44",
+                           "type" : "Exists",
+                           "operand" : {
+                              "localId" : "170",
+                              "locator" : "109:13-109:44",
+                              "name" : "Bilateral Mastectomy Diagnosis",
+                              "type" : "ExpressionRef"
+                           }
+                        } ]
+                     }, {
+                        "localId" : "174",
+                        "locator" : "110:6-110:44",
+                        "type" : "Exists",
+                        "operand" : {
+                           "localId" : "173",
+                           "locator" : "110:13-110:44",
+                           "name" : "Bilateral Mastectomy Procedure",
+                           "type" : "ExpressionRef"
+                        }
+                     } ]
+                  }, {
+                     "localId" : "177",
+                     "locator" : "111:6-111:79",
+                     "name" : "Advanced Illness and Frailty Exclusion Including Under Age 80",
+                     "libraryName" : "FrailtyLTI",
+                     "type" : "ExpressionRef"
+                  } ]
+               }, {
+                  "localId" : "193",
+                  "locator" : "112:6-115:3",
+                  "type" : "Exists",
+                  "operand" : {
+                     "localId" : "192",
+                     "locator" : "112:15-114:67",
+                     "type" : "Query",
+                     "source" : [ {
+                        "localId" : "180",
+                        "locator" : "112:15-112:74",
+                        "alias" : "BirthDate",
+                        "expression" : {
+                           "localId" : "179",
+                           "locator" : "112:15-112:64",
+                           "dataType" : "{urn:healthit-gov:qdm:v5_4}PatientCharacteristicBirthdate",
+                           "codeProperty" : "code",
+                           "type" : "Retrieve",
+                           "codes" : {
+                              "type" : "ToList",
+                              "operand" : {
+                                 "name" : "Birth date",
+                                 "type" : "CodeRef"
+                              }
+                           }
+                        }
+                     } ],
+                     "relationship" : [ ],
+                     "where" : {
+                        "localId" : "191",
+                        "locator" : "113:5-114:67",
+                        "type" : "And",
+                        "operand" : [ {
+                           "localId" : "188",
+                           "locator" : "113:11-113:104",
+                           "type" : "GreaterOrEqual",
+                           "operand" : [ {
+                              "localId" : "186",
+                              "locator" : "113:13-113:97",
+                              "name" : "CalendarAgeInYearsAt",
+                              "libraryName" : "Global",
+                              "type" : "FunctionRef",
+                              "operand" : [ {
+                                 "localId" : "183",
+                                 "locator" : "113:43-113:65",
+                                 "path" : "birthDatetime",
+                                 "scope" : "BirthDate",
+                                 "type" : "Property"
+                              }, {
+                                 "localId" : "185",
+                                 "locator" : "113:68-113:96",
+                                 "type" : "Start",
+                                 "operand" : {
+                                    "localId" : "184",
+                                    "locator" : "113:77-113:96",
+                                    "name" : "Measurement Period",
+                                    "type" : "ParameterRef"
+                                 }
+                              } ]
+                           }, {
+                              "localId" : "187",
+                              "locator" : "113:101-113:102",
+                              "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                              "value" : "65",
+                              "type" : "Literal"
+                           } ]
+                        }, {
+                           "localId" : "190",
+                           "locator" : "114:10-114:67",
+                           "name" : "Has Spent More Than 90 Days in Long Term Care",
+                           "libraryName" : "FrailtyLTI",
+                           "type" : "ExpressionRef"
+                        } ]
+                     }
+                  }
+               } ]
+            }
+         } ]
+      }
+   }
+}
