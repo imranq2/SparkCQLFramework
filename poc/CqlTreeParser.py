@@ -91,7 +91,7 @@ class CqlElmTreeParser:
 
 
 def main():
-    # rule_json_file_path = './BreastCancerScreening-7.2.000.json'
+    # rule_json_file_path = './BreastCancerScreening-8.4.000.json'
     # parser = CqlElmTreeParser()
     # elm = parser.get_elm_from_json_file(rule_json_file_path)
     #
